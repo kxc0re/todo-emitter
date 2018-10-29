@@ -68,9 +68,7 @@ export class TodoState {
   @Receiver()
   public static addTodo({ getState, patchState }: StateContext<TodoStateModel>, { payload }: EmitterAction<string>) {
     const state = getState();
-    patchState({
-      todos: [...state.todos, { id: Math.random(), title: payload, completed: false }]
-    });
+    patchState({ todos: [{ id: Math.random(), title: payload, completed: false }, ...state.todos] });
   }
 
   @Receiver()

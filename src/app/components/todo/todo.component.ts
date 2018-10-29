@@ -12,6 +12,8 @@ export class TodoComponent implements OnInit {
   @Input()
   todo: Todo;
 
+  visible = false;
+
   @Emitter(TodoState.toggleTodo)
   public toggleTodo: Emittable<Todo>;
 
@@ -23,6 +25,13 @@ export class TodoComponent implements OnInit {
 
   @Emitter(TodoState.editTodo)
   public editTodo: Emittable<Todo>;
+
+  onMouseOver() {
+    this.visible = true;
+  }
+  onMouseLeave() {
+    this.visible = false;
+  }
 
   constructor() {}
 

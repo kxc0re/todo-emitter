@@ -1,3 +1,5 @@
-<p>
-  add-todo works!
-</p>
+<form (submit)="saveTodo()" class="add-todo-form">
+  <mat-form-field class="add-todo">
+    <input type="text" matInput placeholder="Todo..." [formControl]="textField">
+  </mat-form-field>
+</form>
