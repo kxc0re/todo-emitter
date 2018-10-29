@@ -1,8 +1,6 @@
 <mat-list>
   <mat-list-item>
     <app-add-todo></app-add-todo>
-    <mat-divider>
-    </mat-divider>
   </mat-list-item>
   <app-todo [todo]="todo" *ngFor="let todo of (todos$ | async)"></app-todo>
 </mat-list>
